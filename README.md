@@ -16,6 +16,23 @@ In this challenge, you will be writing tests for a contact form that has been bu
 
 As a developer, you will be writing tests for every component. As we've learned, tests are a very important part of programming. The tests you will write will help you feel confident in the code you push to production!
 
+## Project Set Up
+
+- [ ] Create a forked copy of this project.
+- [ ] Add your team lead as collaborator on Github.
+- [ ] Clone your OWN version of the repository in your terminal
+- [ ] CD into the project base directory `cd dark-mode`
+- [ ] Download project dependencies by running one of these two commands `yarn` or `npm install`
+- [ ] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
+- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [ ] Push commits: git push origin `<firstName-lastName>`.
+
+**Test Runner**
+- [ ] In a new terminal window, run `yarn test` or `npm run test`
+- [ ] With each saved change in your editor, the test runner will re-run all the tests
+- [ ] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
+
 ## Instructions and/or completion requirements (MVP)
 
 In order to complete your mission for today, you will need to write tests to help you feel confident in shipping this component. Below is a _general_ outline of how to accomplish this.
