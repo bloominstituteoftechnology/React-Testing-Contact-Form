@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Contact Form - Testing
 
-## Available Scripts
+## Advanced React Sprint
 
-In the project directory, you can run:
+## Testing Web Applications
 
-### `yarn start`
+## Objectives
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- explain what automated testing is and its importance
+- use react-testing-library for testing react components
+- use react-testing-library to test user interactions with fireEvent
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Introduction
 
-### `yarn test`
+In this challenge, you will be writing tests for a contact form that has been built with React.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As a developer, you will be writing tests for every component. As we've learned, tests are a very important part of programming. The tests you will write will help you feel confident in the code you push to production!
 
-### `yarn build`
+## Instructions and/or completion requirements (MVP)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In order to complete your mission for today, you will need to write tests to help you feel confident in shipping this component. Below is a _general_ outline of how to accomplish this.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Take a good amount of time to use the form. Find out what behaviors you expect, and any you don't expect.
+1. Write down on a peice of paper what you want to test. (This is a very important step - always plan before coding!)
+1. Add your first test. This one should be a very simple test to make sure the testing setup is working.
+1. Write a sufficient amount of tests to give you confidence in the project's code
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_If you come across any "unexpected" behaviors, try this flow:_
 
-### `yarn eject`
+- [ ] Write a test that will pass for the "exptected" behavior
+- [ ] Confirm that the test fails, because of the "unexpected" behavior
+- [ ] Look at the code in the project to find what is causing the behavior
+- [ ] Fix the code so that your new test passes
+- [ ] Celebrate that your test helped you find and fix a bug!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Stretch goals
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Using the [REQ|RES API](https://reqres.in/), build out a POST request in the form.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - Using the [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro), study how to test async calls
+  - Write a new test to cover your new async call
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Add more elements to the form - eg dropdown, checkbox, etc
+  - Add tests to include the new form elements
