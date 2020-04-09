@@ -6,6 +6,7 @@ export default function App() {
   return (
     <div className="App">
       <ContactForm />
+      
     </div>
   );
 }
