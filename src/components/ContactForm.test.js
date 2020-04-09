@@ -42,7 +42,5 @@ test('Adding items to the contact form and Submitting the form.', () => {
         'Gotta type in a fake message dj dfsjak fnasd fe fv er vs dg rtg gbv tyyj hbfg rytjh grfv btrehgv ty jhtg.'
     );
 
-    act(() => {
-        fireEvent.click(getByText(/submit/i));
-    });
+    fireEvent.click(getByText(/submit/i));
 });
