@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { render, fireEvent } from '@testing-library/react';
 import ContactForm from './ContactForm';
 
@@ -16,7 +17,7 @@ test('Make sure the inputs are visible.', () => {
 });
 
 test('Adding items to the contact form and Submitting the form.', () => {
-    const { getByLabelText, getByText, getByTestId } = render(<ContactForm />);
+    const { getByLabelText, getByText } = render(<ContactForm />);
 
     const fNameInput = getByLabelText(/first Name/i);
     const lNameInput = getByLabelText(/last Name/i);
