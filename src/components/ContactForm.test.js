@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { render, fireEvent } from '@testing-library/react';
 import ContactForm from './ContactForm';
+import { act } from 'react-dom/test-utils';
 
 test('ContactForm Renders', () => {
     render(<ContactForm />);
@@ -41,5 +42,7 @@ test('Adding items to the contact form and Submitting the form.', () => {
         'Gotta type in a fake message dj dfsjak fnasd fe fv er vs dg rtg gbv tyyj hbfg rytjh grfv btrehgv ty jhtg.'
     );
 
-    fireEvent.click(getByText(/submit/i));
+    act(() => {
+        fireEvent.click(getByText(/submit/i));
+    });
 });
