@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
   const [data, setData] = useState();
-  const { register, errors, handleSubmit, reset } = useForm({
+  const { register, errors, handleSubmit} = useForm({
     mode: "onBlur"
   });
   const onSubmit = data => {
@@ -63,7 +63,8 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        <input data-testid="submit" id="submit" type="submit" />
+      
       </form>
     </div>
   );

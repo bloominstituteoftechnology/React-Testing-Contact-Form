@@ -22,7 +22,7 @@ test('form submit adds new info to the list', () => {
   });
 
 test("test to sure that the inputs can be filled in", () => {
-    const {getByLabelText} = render(<ContactForm />)
+    const {getByLabelText, getByTestId} = render(<ContactForm />)
 
     const firstNameInput = getByLabelText(/First/i);
     const lastNameInput = getByLabelText(/Last/i);
@@ -32,7 +32,12 @@ test("test to sure that the inputs can be filled in", () => {
     fireEvent.change(firstNameInput, {target: {value:"hue"}});
     fireEvent.change(lastNameInput, {target: {value:"will"}});
     fireEvent.change(emailInput, {target: {value:"email@mail.com"}})
-    fireEvent.change(messageInput, {target: {value:"gretting"}})
+    fireEvent.change(messageInput, {target: {value:"greeting"}})
     
-   expect(firstNameInput.value).toBe("hue")
+   expect(firstNameInput.value).toBe("hue");
+   expect(lastNameInput.value).toBe("will");
+   expect(emailInput.value).toBe("email@mail.com");
+   expect(messageInput.value).toBe("greeting");
+
+   fireEvent.click(getByTestId("submit"));
 })
