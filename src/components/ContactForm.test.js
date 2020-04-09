@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import ContactForm from './ContactForm';
 
 test('ContactForm Renders', () => {
@@ -7,13 +7,29 @@ test('ContactForm Renders', () => {
 });
 
 test('Adding items to the contact form and Submitting the form.', () => {
-    const(getByLabelText, getByText, getByTestId) = render(<ContactForm />)
-    
+    const { getByLabelText, getByText, getByTestId } = render(<ContactForm />);
 
-    const fNameInput = getLabelByText(/firstName/i)
-    const lNameInput = getLabelByText(/lastName/i)
-    const email = getLabelByText(/email/i)
-    const message = getLabelByText(/message/i)
+    const fNameInput = getByLabelText(/firstName/i);
+    const lNameInput = getByLabelText(/lastName/i);
+    const email = getByLabelText(/email/i);
+    const message = getByLabelText(/message/i);
 
-    
-})
+    fireEvent.change(fNameInput, { target: { value: 'MyFirstName' } });
+    fireEvent.change(lNameInput, { target: { value: 'MyLastName' } });
+    fireEvent.change(email, { target: { value: 'MyEmail@email.com' } });
+    fireEvent.change(message, {
+        target: {
+            value:
+                'Gotta type in a fake message dj dfsjak fnasd fe fv er vs dg rtg gbv tyyj hbfg rytjh grfv btrehgv ty jhtg.',
+        },
+    });
+
+    expect(fNameInput.value).toBe('MyFirstName');
+    expect(lNameInput.value).toBe('MyLastName');
+    expect(email.value).toBe('MyEmail@email.com');
+    expect(message.value).toBe(
+        'Gotta type in a fake message dj dfsjak fnasd fe fv er vs dg rtg gbv tyyj hbfg rytjh grfv btrehgv ty jhtg.'
+    );
+
+    fireEvent.click(getByText(/submit/i));
+});
