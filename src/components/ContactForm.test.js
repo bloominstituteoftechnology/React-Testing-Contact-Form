@@ -1,6 +1,7 @@
 import React from 'react';
 import { render,fireEvent} from '@testing-library/react';
 import ContactForm from './ContactForm';
+// import { act } from 'react-dom/test-utils';
 
 test("render a component!", () => {
     const result = render(<ContactForm />);
@@ -17,12 +18,10 @@ test("test the label text of first name", () => {
     expect(firstNameId).toBeInTheDocument();
 });
 
-test('form submit adds new info to the list', () => {
-    
-  });
 
-test("test to sure that the inputs can be filled in", () => {
-    const {getByLabelText, getByTestId} = render(<ContactForm />)
+test("test to sure that the inputs can be filled in",  () => {
+    // eslint-disable-next-line no-unused-expressions
+    async () => {const {getByLabelText, getByTestId} = render(<ContactForm />)
 
     const firstNameInput = getByLabelText(/First/i);
     const lastNameInput = getByLabelText(/Last/i);
@@ -39,5 +38,5 @@ test("test to sure that the inputs can be filled in", () => {
    expect(emailInput.value).toBe("email@mail.com");
    expect(messageInput.value).toBe("greeting");
 
-   fireEvent.click(getByTestId("submit"));
+   fireEvent.click(getByTestId("submit"));}
 })
