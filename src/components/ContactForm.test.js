@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, getByLabelText } from '@testing-library/react';
 import ContactForm from './ContactForm';
 
 test('Shows first name', () => {
@@ -38,4 +38,13 @@ test('Shows message', () => {
 
 });
 
+test('changing text values', () => {
+  const {getByText, getByTestId} = render(<ContactForm/>)
+  const firstName = getByText(/First Name*/)
+  fireEvent.change(firstName, {target:{value: 'Tom'}});
+
+  expect(firstName.value).toBe('Tom');
+
+  fireEvent.click(getByTestId(/test/i));
+})
 
