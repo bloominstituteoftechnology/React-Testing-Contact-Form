@@ -17,7 +17,7 @@ const ContactForm = () => {
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
-            placeholder="bill"
+            placeholder="bill" 
             ref={register({ required: true, maxLength: 3 })}
           />
           {errors.firstName && (
@@ -29,7 +29,7 @@ const ContactForm = () => {
           <label htmlFor="lastName">Last Name*</label>
           <input
             name="lastName"
-            placeholder="luo"
+            placeholder="luo" //testing
             ref={register({ required: true })}
           />
           {errors.lastName && (
@@ -55,7 +55,8 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        {/* testing */}
+        <input type="submit" /> 
       </form>
     </div>
   );
