@@ -3,10 +3,10 @@ import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
   const [data, setData] = useState();
-  const { register, errors, handleSubmit, reset } = useForm({
-    mode: "onBlur"
+  const { register, errors, handleSubmit } = useForm({
+    mode: "onBlur",
   });
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     setData(data);
   };
 
@@ -17,7 +17,7 @@ const ContactForm = () => {
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
-            placeholder="bill"
+            placeholder="Edd"
             ref={register({ required: true, maxLength: 3 })}
           />
           {errors.firstName && (
@@ -29,7 +29,7 @@ const ContactForm = () => {
           <label htmlFor="lastName">Last Name*</label>
           <input
             name="lastName"
-            placeholder="luo"
+            placeholder="Burke"
             ref={register({ required: true })}
           />
           {errors.lastName && (
