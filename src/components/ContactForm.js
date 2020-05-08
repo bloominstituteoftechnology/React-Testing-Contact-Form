@@ -21,6 +21,7 @@ const ContactForm = () => {
             name="firstName"
             placeholder="Edd"
             // fix code, so that test pass
+            // ref={register({ required: true, maxLength: 3 })}
             ref={register({ required: true, minLength: 3 })}
           />
           {errors.firstName && (
@@ -58,7 +59,7 @@ const ContactForm = () => {
           <textarea name="message" ref={register({ required: false })} />
         </div>
         {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
+          <pre data-testid="dataInfo" style={{ textAlign: "left", color: "white" }}>
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
