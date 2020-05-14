@@ -3,10 +3,10 @@ import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
   const [data, setData] = useState();
-  const { register, errors, handleSubmit, reset } = useForm({
-    mode: "onBlur"
+  const { register, errors, handleSubmit } = useForm({
+    mode: "onBlur",
   });
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     setData(data);
   };
 
@@ -17,8 +17,13 @@ const ContactForm = () => {
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
+ Dessa-Goodlett
             placeholder="first"
             ref={register({ required: true, maxLength: 10 })}
+
+            placeholder="Edd"
+            ref={register({ required: true, maxLength: 3 })}
+ master
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
@@ -28,8 +33,11 @@ const ContactForm = () => {
         <div>
           <label htmlFor="lastName">Last Name*</label>
           <input
-            name="lastName"
+ Dessa-Goodlett
             placeholder="last"
+
+            placeholder="Burke"
+ master
             ref={register({ required: true })}
           />
           {errors.lastName && (
