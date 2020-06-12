@@ -31,26 +31,37 @@ test("first and last name, email and message are being rendered", () => {
 
 // testing for appearance
 
-test('first name appears', async () => {
-    await waitFor(() => {
-        expect(getByText(/first name/i)).toBeInTheDocument()
-    })
+// test('first name appears', async () => {
+//     await waitFor(() => {
+//         expect(getByText(/first name/i)).toBeInTheDocument()
+//     })
 
-    const nameinput = await findByText(/first name/i)
-})
+//     const nameinput = await findByText(/first name/i)
+// })
 
-test('submit adds new inputs', () => {
-    const {getByLabelText} = render(<ContactForm />)
-    const firstNameInput =  getByLabelText(/first name/i);
+test('form submit adds new items', () => {
+    const { getByLabelText } = render(<ContactForm />)
+
+    const firstNameInput = getByLabelText(/first Name/i);
     const lastNameInput = getByLabelText(/last Name/i);
-     const emailInput = getByLabelText(/email/i);
-     const messageInput = getByLabelText(/message/i);
+    const emailInput = getByLabelText(/email/i);
+    const messageInput = getByLabelText(/message/i);
 
-     fireEvent.change(firstNameInput, {target: {value: 'test first name'}});
-    fireEvent.change(lastNameInput, {target: {value: 'test last name'}});
-    fireEvent.change(emailInput, {target: {value: 'test email input'}});
-    fireEvent.change(messageInput, {target: {value: 'test message input'}});
+    fireEvent.change(firstNameInput, { target: { value: 'testing firstName'} })
+    fireEvent.change(lastNameInput, { target: { value: 'testing lastName'} })
+    fireEvent.change(emailInput, { target: { value: 'testing email'} })
+    fireEvent.change(messageInput, { target: { value: 'testing message'} })
 
-    expect(firstNameInput.value).toBe('test first name');
+    expect(firstNameInput.value).toBe('testing firstName');
+    expect(lastNameInput.value).toBe('testing lastName');
+    expect(emailInput.value).toBe('testing email');
+    expect(messageInput.value).toBe('testing message');
 })
 
+test("button works", () => {
+    const { getByTestId } = render(<ContactForm />);
+    const button = getByTestId("submit");
+
+    fireEvent.click(button);
+    expect(button).toBeVisible();
+})
