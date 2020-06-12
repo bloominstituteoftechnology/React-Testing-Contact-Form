@@ -26,7 +26,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="lastName">Last Name*</label>
+          <label htmlFor="lastName" >Last Name*</label>
           <input
             name="lastName"
             placeholder="Burke"
