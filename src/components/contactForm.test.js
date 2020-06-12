@@ -3,20 +3,34 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import ContactForm from "./ContactForm";
 
-// test("renders with no crashes", () => {
-//arrange
-//   const { getByText } = render(<ContactForm />);
+test("renders with no crashes", async () => {
+  //arrange
+  const { getByText, findByText } = render(<ContactForm />);
+  const txt1 = await findByText('input[name="firstname"]');
+  expect(txt1).toHaveLength(3);
+  //   //act
+  //   getByText(/[a-z]/i);
+  // });
+});
+describe("testing contact form inputs", () => {
+  it("Finds the Named Input", () => {
+    let expected = "Edd";
+    //act
 
-//   //act
-//   getByText(/[a-z]/i);
-// });
+    let actual = "Edd";
+    // 'input[name="firstname"]';
+
+    //assert
+    expect(actual).toBe(expected);
+  });
+});
 
 describe("testing contact form inputs", () => {
   it("Finds the Named Input", () => {
-    let expected = 'input[name="firstname"]';
+    let expected = "Burke";
     //act
 
-    let actual = 'input[name="firstname"]';
+    let actual = "Burke";
     // 'input[name="firstname"]';
 
     //assert
