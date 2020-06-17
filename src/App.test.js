@@ -14,6 +14,7 @@ test('input', ()=>{
    const lastName = getByText(/last name*/i);
    const email = getByText(/email*/i);
    const firstNameInput = screen.getByTestId(/fname/i);
+   const error = screen.getByTestId(/fnameerror/i);
 
   expect(firstName).toBeInTheDocument;
   expect(firstName).toHaveFormValues;
@@ -26,4 +27,6 @@ test('input', ()=>{
 
   fireEvent.change(firstNameInput, {target : {value: 'Lindsay'}} );
   
+  expect(error).toBeInTheDocument;
+
 })
