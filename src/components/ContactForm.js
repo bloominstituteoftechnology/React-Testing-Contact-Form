@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";  
+import { useForm } from "react-hook-form"; 
+ 
 
 const ContactForm = () => {
   const [data, setData] = useState();
@@ -13,11 +14,13 @@ const ContactForm = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+        <div >
           <label htmlFor="firstName">First Name*</label>
           <input
+          data-testid='fname'
             name="firstName"
             placeholder="Edd"
+            
             ref={register({ required: true, maxLength: 3 })}
           />
           {errors.firstName && (
