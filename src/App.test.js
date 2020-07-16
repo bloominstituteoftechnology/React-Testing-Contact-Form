@@ -16,7 +16,7 @@ test('first name input max length 10', async () => {
     // console.log(container);
 
     await act(async () => {
-        const nameInput = getByLabelText(/First Name*/i)
+        const nameInput = getByLabelText("First Name*")
         fireEvent.change(nameInput, { target: { value: 'Jennifer' } })
         fireEvent.blur(nameInput)
     })
