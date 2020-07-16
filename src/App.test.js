@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 // import { App } from './App';
 import ContactForm from './components/ContactForm';
+import { act } from "react-dom/test-utils";
 
 // test("renders App without crashing", () => {
 //   const { getByText } = render(<App />);
@@ -9,17 +10,18 @@ import ContactForm from './components/ContactForm';
 //   console.log(getByText);
 // });
 
-test('first name input max length 10', () => {
-  const container = render(<ContactForm />);
+test('first name input max length 10', async () => {
+    const { getByLabelText, container } = render(<ContactForm />);
 
-  // console.log(container);
+    // console.log(container);
 
-  const firstnameInput = container.queryByPlaceholderText(/edd/i);
+    await act(async () => {
+        const nameInput = getByLabelText(/First Name*/i)
+        fireEvent.change(nameInput, { target: { value: 'Jennifer' } })
+        fireEvent.blur(nameInput)
+    })
 
-  fireEvent.input(firstnameInput, { target: { value: '0123465789' } });
-
-  expect(firstnameInput.maxlength).toBe(10);
-  expect(firstnameInput.value).toBe('0123456789')
+    expect(container.innerText).toMatch('Jennifer')
 
 
 
