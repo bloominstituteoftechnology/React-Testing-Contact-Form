@@ -1,6 +1,6 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-// import { App } from './App';
+import { render, fireEvent, getByText } from "@testing-library/react";
+import { App } from './App';
 import ContactForm from './components/ContactForm';
 import { act } from "react-dom/test-utils";
 
