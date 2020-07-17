@@ -1,29 +1,35 @@
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 // import { App } from './App';
 import ContactForm from './components/ContactForm';
 import { act } from "react-dom/test-utils";
 
-// test("renders App without crashing", () => {
-//   const { getByText } = render(<App />);
+test('test form inputs', async () => {
+    const { getByTestId } = render(<ContactForm />);
 
-//   console.log(getByText);
-// });
+    const firstName = getByTestId('firstName');
+    fireEvent.change(firstName, {
+        target: { value: 'Jennifer' }
+    });
+    expect(getByTestId('firstName')).toHaveValue('Jennifer');
 
-test('first name input max length 10', async () => {
-    const { getByLabelText, container } = render(<ContactForm />);
+    const lastName = getByTestId('lastName');
+    fireEvent.change(lastName, { target: { value: 'Vest' } });
+    expect(getByTestId('lastName')).toHaveValue('Vest');
 
-    // console.log(container);
+    const email = getByTestId('email');
+    fireEvent.change(email, { target: { value: 'jenvest2020@gmail.com' } });
+    expect(getByTestId('email')).toHaveValue('jenvest2020@gmail.com');
+});
 
-    await act(async () => {
-        const nameInput = getByLabelText("First Name*")
-        fireEvent.change(nameInput, { target: { value: 'Jennifer' } })
-        fireEvent.blur(nameInput)
-    })
+// test('tests submit button', async () => {
+//     const { getByTestId } = render(<ContactForm />);
 
-    expect(container.innerText).toMatch('Jennifer')
+//     const submit = getByTestId('submit');
+//     act(async () => {
+//         await fireEvent.click(submit);
+//     })
 
 
-
-})
+// })
 
