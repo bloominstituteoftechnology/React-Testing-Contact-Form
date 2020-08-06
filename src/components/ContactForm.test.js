@@ -1,5 +1,5 @@
 import React from 'react'
-import {render, screen, fireEvent} from '@testing-library/react'
+import {render, screen, fireEvent, waitFor} from '@testing-library/react'
 import ContactForm from './ContactForm'
 
 test('renders Contact Form component without errors.', () => {
@@ -23,5 +23,7 @@ test('Able to submit the form when information is filled out.', async () => {
 
     fireEvent.click(submitBtn)
 
-    expect(await screen.findByTestId(/result/i)).toBeInTheDocument()
+    waitFor(() => {
+        expect(screen.findByTestId(/result/i)).toBeInTheDocument()
+    })
 })
