@@ -6,6 +6,19 @@ test('renders Contact Form component without errors.', () => {
     render(<ContactForm/>)
 })
 
+test('Display value of Edd Burke on page load', async () => {
+    render(<ContactForm/>)
+
+   
+    const edd = screen.findByPlaceholderText(/edd/i)
+   
+    waitFor(() => {
+        expect(edd.toBeInTheDocument());
+    })
+   
+})
+
+
 test('Able to submit the form when information is filled out.', async () => {
     render(<ContactForm/>)
 
@@ -26,4 +39,18 @@ test('Able to submit the form when information is filled out.', async () => {
     waitFor(() => {
         expect(screen.findByTestId(/result/i)).toBeInTheDocument()
     })
+})
+
+test('Error message displays if max length of First Name exceeded', async () => {
+    render(<ContactForm/>)
+
+   
+    const firstNameInput = screen.getByLabelText(/first name/i)
+
+    fireEvent.change(firstNameInput, {target: {value: 'Cleopatra'}})
+   
+    waitFor(() => {
+        expect(screen.getByText(/maxlength/i).toBeInTheDocument());
+    })
+   
 })
