@@ -28,9 +28,9 @@
     - [x] Start up the app using `npm start`.
 
 **Test Runner**
-- [ ] In a new terminal window, run `npm test`
-- [ ] With each saved change in your editor, the test runner will re-run all the tests
-- [ ] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
+- [x] In a new terminal window, run `npm test`
+- [x] With each saved change in your editor, the test runner will re-run all the tests
+- [x] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
 
 -----------------------------------------------MVP------------------------------------------------------------------------------
 
