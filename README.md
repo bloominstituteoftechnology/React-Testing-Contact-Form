@@ -38,13 +38,13 @@
   In order to complete your mission for today, you will need to write tests to help you feel confident in shipping this component. Below is a _general_ outline of how to accomplish this.
 
   -[x] **Part 1: Logging functionality/disfunctionality** 1. Take a good amount of time to use the form. Find out what behaviors you expect, and any you don't expect. (Don't fix unexpected behaviors yet. We want our test to show us what's wrong in the UI, then fix the behavior - we'll walk you through that down below)
+
     Expect: 
       Input:
         Placeholders for each input.
-        Required for important inputs
+        Validation required for important inputs
       Validation:
-        Make sure the appropriate type if being used
-          ex. email
+        Make sure the appropriate type of information is being input. ex. email
         Make sure minimum maximum lengths are appropriate
       Submit Button:
         Submit works with enter (onSubmit)
@@ -52,7 +52,7 @@
     Didn't Expect:
       Inputs:
         placeholder?
-        min and mex not appropriate
+        max not appropriate
       Validation:
         validation checks for required but does not always check for type
       Submit Button:
@@ -66,14 +66,41 @@
     Didn't Expect:
       Inputs:
         placeholder?
-        min and mex not appropriate
+        min and max not appropriate
       Validation:
         validation checks for required but does not always check for type
+        error message displayed
       Submit Button:
         onSubmit does not work
-        
-  -[ ] **Part 3: Add your first test** 3. Add your first test. This one should be a very simple test to make sure the testing setup is working.
+
+  -[x] **Part 3: Add your first test** 3. Add your first test. This one should be a very simple test to make sure the testing setup is working.
+    - [x] Test ContactForm.js renders
+
   -[ ] **Part 4: Write sufficient amount of tests.** 4. Write a sufficient amount of tests to give you confidence in the project's code
+
+    - Refer to: 
+    - RTL: https://testing-library.com/docs/react-testing-library/intro
+    - Jest: https://jestjs.io/docs/en/expect
+    - Kent C. Dodds Testing Javascript: https://testingjavascript.com/
+    - CheatSheet for queries: https://testing-library.com/docs/react-testing-library/cheatsheet#queries
+
+   Didn't Expect:
+      Inputs:
+        Placeholders are missing. 
+          (Test to see if placeholder even exists. )
+        Maximum length is too short first name. 
+          (Test for error after long name is entered.)
+      Validation:
+        Validation check does not always check for type ex. email 
+          (Test for a <p> error when no "@" symbol is used)
+      ##Submit Button:##
+        onSubmit does not work.
+          (Test to see if after entering text into inputs if )
+          
+
+
+  
+
 
   _If you come across any "unexpected" behaviors in the form UI (not the test), try this flow:_
 
