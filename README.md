@@ -21,11 +21,11 @@
     - [x] Create a new branch: git checkout -b `<firstName-lastName>`.
     - [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 
-  -[ ] Dependencies
-    - [ ] Push commits: git push origin `<firstName-lastName>`.
-    - [ ] Add your team lead as collaborator on Github.
-    - [ ] Download project dependencies by running `npm install`.
-    - [ ] Start up the app using `npm start`.
+  -[x] Dependencies
+    - [x] Push commits: git push origin `<firstName-lastName>`.
+    - [x] Add your team lead as collaborator on Github.
+    - [x] Download project dependencies by running `npm install`.
+    - [x] Start up the app using `npm start`.
 
 **Test Runner**
 - [ ] In a new terminal window, run `npm test`
