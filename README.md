@@ -59,7 +59,19 @@
         onSubmit does not work
 
 
-  -[ ] **Part 2: Writing what to Test** 2. Write down on a piece of paper what you want to test. (This is a very important step - always plan before coding!)
+  -[x] **Part 2: Writing what to Test** 2. Write down on a piece of paper what you want to test. (This is a very important step - always plan before coding!)\
+
+    Everything I didn't expect from "Part 1".
+
+    Didn't Expect:
+      Inputs:
+        placeholder?
+        min and mex not appropriate
+      Validation:
+        validation checks for required but does not always check for type
+      Submit Button:
+        onSubmit does not work
+        
   -[ ] **Part 3: Add your first test** 3. Add your first test. This one should be a very simple test to make sure the testing setup is working.
   -[ ] **Part 4: Write sufficient amount of tests.** 4. Write a sufficient amount of tests to give you confidence in the project's code
 
