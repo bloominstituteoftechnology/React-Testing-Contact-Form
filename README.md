@@ -37,7 +37,28 @@
 ## Instructions and/or completion requirements (MVP)
   In order to complete your mission for today, you will need to write tests to help you feel confident in shipping this component. Below is a _general_ outline of how to accomplish this.
 
-  -[ ] **Part 1: Logging functionality/disfunctionality** 1. Take a good amount of time to use the form. Find out what behaviors you expect, and any you don't expect. (Don't fix unexpected behaviors yet. We want our test to show us what's wrong in the UI, then fix the behavior - we'll walk you through that down below)
+  -[x] **Part 1: Logging functionality/disfunctionality** 1. Take a good amount of time to use the form. Find out what behaviors you expect, and any you don't expect. (Don't fix unexpected behaviors yet. We want our test to show us what's wrong in the UI, then fix the behavior - we'll walk you through that down below)
+    Expect: 
+      Input:
+        Placeholders for each input.
+        Required for important inputs
+      Validation:
+        Make sure the appropriate type if being used
+          ex. email
+        Make sure minimum maximum lengths are appropriate
+      Submit Button:
+        Submit works with enter (onSubmit)
+
+    Didn't Expect:
+      Inputs:
+        placeholder?
+        min and mex not appropriate
+      Validation:
+        validation checks for required but does not always check for type
+      Submit Button:
+        onSubmit does not work
+
+
   -[ ] **Part 2: Writing what to Test** 2. Write down on a piece of paper what you want to test. (This is a very important step - always plan before coding!)
   -[ ] **Part 3: Add your first test** 3. Add your first test. This one should be a very simple test to make sure the testing setup is working.
   -[ ] **Part 4: Write sufficient amount of tests.** 4. Write a sufficient amount of tests to give you confidence in the project's code
