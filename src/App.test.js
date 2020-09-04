@@ -17,7 +17,7 @@ test("testing contact form", () => {
   const User = {
     eName: "Mike",
     eLastname: "Mitchell",
-    eEmail: "mm@email.com",
+    eEmail: "mm@email.comm",
     eMessage: "This is my message",
   };
 
