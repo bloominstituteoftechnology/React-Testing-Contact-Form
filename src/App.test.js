@@ -1,23 +1,24 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import App from "./App";
-import ContactForm from './components/ContactForm';
 
-test("renders App without crashing", () => {
+import App from "./App";
+import ContactForm from "./components/ContactForm";
+
+test("Renders App without crashing", () => {
   render(<App />);
 });
 
 //Part 3: Add your first test:
-test("renders ContactForm.js without crashing", () => {
+test("Renders ContactForm.js without crashing", () => {
   render(<ContactForm />);
 });
 
 //Part 4: Write sufficient amount of tests
 
- //Arrange (initial requirements)
-  //   Act (invoke method)
-  //   Assert (expectations)
-  //   render(<ContactForm />);
+//Arrange (initial requirements)
+//   Act (invoke method)
+//   Assert (expectations)
+//   render(<ContactForm />);
 
 /* 
   Inputs:
@@ -35,52 +36,51 @@ test("renders ContactForm.js without crashing", () => {
 
 //------------------------------// Inputs: //------------------------------//
 
-// test('Changing inputs', () => {
-//   const { getByLabelText, getByTestId } = render(<ContactForm/>)
+test("Inputs fields exist and are functional", async () => {
+  const { getByLabelText } = render(<ContactForm />);
 
-//   const firstNameInput = getByLabelText(/First Name*/)
-//   const emailInput =  getByLabelText(/email/i)
+  const firstName = getByLabelText(/first name*/i);
+  expect(firstName).toBeTruthy();
+  const lastName = getByLabelText(/last name*/i);
+  expect(lastName).toBeTruthy();
+  const message = getByLabelText(/message*/i);
+  expect(message).toBeTruthy();
+});
 
-//   fireEvent.change(firstNameInput, {target: { value: "Test" },});
+// 'Test for placeholders'
+test("Test for placeholders", () => {
+  // Placeholders are missing.
+  //  (Test to see if placeholder even exists. )
+  const { getByLabelText } = render(<ContactForm />); // Does jest not need to be imported?
 
-//   expect(firstNameInput.value).toBe("Test");
+  const firstNameLabel = getByLabelText(/first name/i);
+  const lastNameLabel = getByLabelText(/last name/i);
 
+  expect(firstNameLabel).toHaveAttribute("placeholder");
+  expect(lastNameLabel).toHaveAttribute("placeholder");
+});
 
-//   fireEvent.change(emailInput, {target: { value: "test@email.com" },});
-
-//   expect(emailInput.value).toBe("test@email.com");
+// // 'Test for maximum and minimum validation'
+// test('Test for maximum and minimum validation', () => {
+// // Maximum length is too short first name.
+// //   (Test for error after long name is entered.)
 
 // })
 
-// 'Test for placeholders'
-test('Test for placeholders', () => {
-// Placeholders are missing. 
-//   (Test to see if placeholder even exists. )
+// //------------------------------// Validation: //------------------------------//
 
-})
+// // 'Test for
+// test('Test errors when incorrect type is used', () => {
+// // Validation check does not always check for type ex. email
+// //   (Test for a <p> error when no "@" symbol is used)
 
-// 'Test for maximum and minimum validation'
-test('Test for maximum and minimum validation', () => {
-// Maximum length is too short first name. 
-//   (Test for error after long name is entered.)
+// }
 
-})
+// //------------------------------// Submit: //------------------------------//
 
-//------------------------------// Validation: //------------------------------//
+// //
+// test('Test to see if onSubmit functionality working', () => {
+// // onSubmit does not work.
+// //   (Test to see if after entering text into inputs if )
 
-// 'Test for 
-test('Test errors when incorrect type is used', () => {
-// Validation check does not always check for type ex. email 
-//   (Test for a <p> error when no "@" symbol is used)
-
-}
-
-//------------------------------// Submit: //------------------------------//
-
-// 
-test('Test to see if onSubmit functionality working', () => {
-// onSubmit does not work.
-//   (Test to see if after entering text into inputs if )
-
-
-})
+// })
