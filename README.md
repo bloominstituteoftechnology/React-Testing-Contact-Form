@@ -104,12 +104,12 @@
 
   _If you come across any "unexpected" behaviors in the form UI (not the test), try this flow:_
 
-  - [ ] Write a test for the "expected" behavior of form validation (it will fail because something in the component is doing something unexpected)
-  - [ ] Confirm that the test fails, because of the "unexpected" behavior
-  - [ ] Look at the code in the project to find what is causing the behavior
-  - [ ] Fix the code so that your new test passes
+  - [x] Write a test for the "expected" behavior of form validation (it will fail because something in the component is doing something unexpected)
+  - [x] Confirm that the test fails, because of the "unexpected" behavior
+  - [x] Look at the code in the project to find what is causing the behavior
+  - [x] Fix the code so that your new test passes
   
-  - [ ] Repeat?
+  - [x] Repeat?
 
 ---------------------------------------------STRETCH---------------------------------------------------------------------------
 
@@ -125,10 +125,9 @@
 
 ----------------------------------------CLEAN REVIEW SUBMIT--------------------------------------------------------------------
 
-- [ ] Clean remaining comments, bad-formatting, etc.
-- [ ] Review functionality + MVP
-- [ ] Submit Pull Request
-- [ ] Complete Retrospective https://forms.lambdaschool.com/module-retrospective
-- [ ] Inform TL of completion
+- [x] Clean remaining comments, bad-formatting, etc.
+- [x] Review functionality + MVP
+- [x] Submit Pull Request
+- [x] Complete Retrospective https://forms.lambdaschool.com/module-retrospective
 
 ///////////////////////////////////////////PROJECT START///////////////////////////////////////////////////////////////////////
