@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, getByLabelText } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import App from "./App";
 import ContactForm from './components/ContactForm';
 import { act } from "react-dom/test-utils";
@@ -7,20 +7,26 @@ import { act } from "react-dom/test-utils";
 test("renders App without crashing", () => {
   render(<App />);
 });
-/*
-describe("On Submit works"), () => {
-  it('calls onSubmit function', () => {
+
+describe("On Submit works" , () => {
+  it('calls onSubmit function', async () => {
     const mockOnSubmit = jest.fn()
-    const { getByLabelText, getByRole } = render(<ContactForm onSubmit = {mockOnSubmit} />)
-    
-    fireEvent.change(getByLabelText("email"), {target: {value: "email.test@lambda.com"}})
-    fireEvent.change(getByLabelText("firstName"), {target: {value: "Daniel"}})
-    fireEvent.change(getByLabelText("lastName"), {target: {value: "Terry"}})
-   
-      fireEvent.click(getbyRole("button"))
-    expect(mockOnSubmit).toHaveBeenCalled()
+    const { getByTestId, getByRole } = render(<ContactForm onSubmit = {mockOnSubmit} />)
+    const emailInput = getByTestId("email")
+    const firstNameInput = getByTestId("Edd")
+    const lastNameInput = getByTestId("Burke")
+    await act(async () => {
+    fireEvent.change(emailInput, {target:{value:'email@123.com'}})
+    fireEvent.change(firstNameInput, {target:{value:"Daniel"}})
+    fireEvent.change(lastNameInput , {target: {value:"Terry"}})
   })
-}*//*
+  await act(async () => {
+      fireEvent.click(getByTestId("submit"))
+  })
+  expect(mockOnSubmit).toHaveBeenCalled
+  })
+
+})/*
 test("Submit" , () => {
 
 })
