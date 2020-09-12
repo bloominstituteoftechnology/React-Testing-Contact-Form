@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
   const { register, errors, handleSubmit } = useForm({
     mode: "onBlur",
   });
@@ -10,30 +15,41 @@ const ContactForm = () => {
     setData(data);
   };
 
+  const handleChange = (e) => {
+    e.persist();
+    //using the spread operator below to make sure that each field is updated individually. The ternary is necessary for the checkbox.
+    const newFormData = {
+      ...data,
+      [e.target.name]: e.target.value,
+    };
+    setData(newFormData);
+  };
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
-            data-testid="first-name"
+            id="firstName"
             name="firstName"
             placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+            value={data.name}
+            onChange={handleChange}
+            ref={register({ required: true })}
           />
           {errors.firstName && (
-            <p data-testid="error">
-              Looks like there was an error: {errors.firstName.type}
-            </p>
+            <p>Looks like there was an error: {errors.firstName.type}</p>
           )}
         </div>
 
         <div>
           <label htmlFor="lastName">Last Name*</label>
           <input
-            data-testid="last-name"
+            id="lastName"
             name="lastName"
             placeholder="Burke"
+            value={data.name}
+            onChange={handleChange}
             ref={register({ required: true })}
           />
           {errors.lastName && (
@@ -46,8 +62,10 @@ const ContactForm = () => {
             Email*
           </label>
           <input
-            data-testid="email"
+            id="email"
             name="email"
+            value={data.name}
+            onChange={handleChange}
             ref={register({ required: true })}
           />
           {errors.email && (
@@ -57,18 +75,20 @@ const ContactForm = () => {
         <div>
           <label htmlFor="message">Message</label>
           <textarea
-            data-testid="message"
+            id="message"
             name="message"
+            value={data.name}
+            onChange={handleChange}
             ref={register({ required: false })}
           />
         </div>
-        <div data-testid="data">
-          {data && (
-            <pre style={{ textAlign: "left", color: "white" }}>
-              {JSON.stringify(data, null, 2)}
-            </pre>
-          )}
-        </div>
+
+        {data && (
+          <pre style={{ textAlign: "left", color: "white" }}>
+            {JSON.stringify(data, null, 2)}
+          </pre>
+        )}
+
         <label>
           <button data-testid="submit" type="submit">
             Submit

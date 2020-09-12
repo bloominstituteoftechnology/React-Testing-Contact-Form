@@ -1,5 +1,11 @@
 import React from "react";
-import { fireEvent, getByTestId, render, screen } from "@testing-library/react";
+import {
+  fireEvent,
+  getByTestId,
+  getByText,
+  render,
+  screen,
+} from "@testing-library/react";
 import App from "./App";
 import ContactForm from "./components/ContactForm";
 import { act } from "react-dom/test-utils";
@@ -20,8 +26,8 @@ it("contains first name, last name, email and message forms", () => {
 
   getByText(/First Name*/i);
   getByText(/Last Name*/i);
-  getByText(/Email*/i);
-  getByText(/Message/i);
+  getByText("Email*");
+  getByText("Message");
 });
 
 test("has a submit button", () => {
@@ -34,13 +40,22 @@ test("has a submit button", () => {
   expect(submitButton).toBeInTheDocument();
 });
 
-test("First Name should accept more than 3 letters", () => {
-  const { getByTestId } = render(<App />);
+test("Input fields should accept input", () => {
+  render(<ContactForm />);
 
-  const firstName = getByTestId("first-name");
-  const error = screen.getByText(/error/i);
-  fireEvent.change(firstName, { target: { value: "1234" } });
-  fireEvent.click(getByTestId("submit"));
+  const firstNameInput = screen.getByLabelText(/first name/i);
+  const lastNameInput = screen.getByLabelText(/last name/i);
+  const emailInput = screen.getByLabelText(/email/i);
+  const messageInput = screen.getByLabelText(/message/i);
+  const submit = screen.getByText(/submit/i);
+  fireEvent.change(firstNameInput, { target: { value: "Tony" } });
+  fireEvent.change(lastNameInput, { target: { value: "Sorensen" } });
+  fireEvent.change(emailInput, { target: { value: "tony48853@gmail.com" } });
+  fireEvent.change(messageInput, { target: { value: "random text" } });
+  fireEvent.click(submit);
 
-  expect(error).not.toBeInTheDocument();
+  expect(screen.getByText(/tony/i)).toBeInTheDocument();
+  expect(screen.getByText(/sorensen/i)).toBeInTheDocument();
+  expect(screen.getByText(/tony48853@gmail.com/i)).toBeInTheDocument();
+  expect(screen.getByText(/random text/i)).toBeInTheDocument();
 });
