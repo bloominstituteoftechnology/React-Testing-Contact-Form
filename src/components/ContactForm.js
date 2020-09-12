@@ -28,30 +28,34 @@ const ContactForm = () => {
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="firstName">First Name*</label>
-          <input
-            id="firstName"
-            name="firstName"
-            placeholder="Edd"
-            value={data.name}
-            onChange={handleChange}
-            ref={register({ required: true })}
-          />
+          <label htmlFor="firstName">
+            First Name*
+            <input
+              data-testid="first"
+              name="firstName"
+              placeholder="Edd"
+              value={data.firstName}
+              onChange={handleChange}
+              ref={register({ required: true, maxLength: 3 })}
+            />
+          </label>
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="lastName">Last Name*</label>
-          <input
-            id="lastName"
-            name="lastName"
-            placeholder="Burke"
-            value={data.name}
-            onChange={handleChange}
-            ref={register({ required: true })}
-          />
+          <label htmlFor="lastName">
+            Last Name*
+            <input
+              id="lastName"
+              name="lastName"
+              placeholder="Burke"
+              value={data.lastName}
+              onChange={handleChange}
+              ref={register({ required: true })}
+            />
+          </label>
           {errors.lastName && (
             <p>Looks like there was an error: {errors.lastName.type}</p>
           )}
@@ -60,14 +64,14 @@ const ContactForm = () => {
         <div>
           <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
             Email*
+            <input
+              id="email"
+              name="email"
+              value={data.email}
+              onChange={handleChange}
+              ref={register({ required: true })}
+            />
           </label>
-          <input
-            id="email"
-            name="email"
-            value={data.name}
-            onChange={handleChange}
-            ref={register({ required: true })}
-          />
           {errors.email && (
             <p>Looks like there was an error: {errors.email.type}</p>
           )}
@@ -77,7 +81,7 @@ const ContactForm = () => {
           <textarea
             id="message"
             name="message"
-            value={data.name}
+            value={data.message}
             onChange={handleChange}
             ref={register({ required: false })}
           />
@@ -89,11 +93,7 @@ const ContactForm = () => {
           </pre>
         )}
 
-        <label>
-          <button data-testid="submit" type="submit">
-            Submit
-          </button>
-        </label>
+        <button>Submit</button>
       </form>
     </div>
   );
