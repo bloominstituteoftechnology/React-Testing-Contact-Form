@@ -16,18 +16,22 @@ const ContactForm = () => {
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
+            data-testid="first-name"
             name="firstName"
             placeholder="Edd"
             ref={register({ required: true, maxLength: 3 })}
           />
           {errors.firstName && (
-            <p>Looks like there was an error: {errors.firstName.type}</p>
+            <p data-testid="error">
+              Looks like there was an error: {errors.firstName.type}
+            </p>
           )}
         </div>
 
         <div>
           <label htmlFor="lastName">Last Name*</label>
           <input
+            data-testid="last-name"
             name="lastName"
             placeholder="Burke"
             ref={register({ required: true })}
@@ -41,21 +45,35 @@ const ContactForm = () => {
           <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
             Email*
           </label>
-          <input name="email" ref={register({ required: true })} />
+          <input
+            data-testid="email"
+            name="email"
+            ref={register({ required: true })}
+          />
           {errors.email && (
             <p>Looks like there was an error: {errors.email.type}</p>
           )}
         </div>
         <div>
           <label htmlFor="message">Message</label>
-          <textarea name="message" ref={register({ required: false })} />
+          <textarea
+            data-testid="message"
+            name="message"
+            ref={register({ required: false })}
+          />
         </div>
-        {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
-            {JSON.stringify(data, null, 2)}
-          </pre>
-        )}
-        <input type="submit" />
+        <div data-testid="data">
+          {data && (
+            <pre style={{ textAlign: "left", color: "white" }}>
+              {JSON.stringify(data, null, 2)}
+            </pre>
+          )}
+        </div>
+        <label>
+          <button data-testid="submit" type="submit">
+            Submit
+          </button>
+        </label>
       </form>
     </div>
   );
