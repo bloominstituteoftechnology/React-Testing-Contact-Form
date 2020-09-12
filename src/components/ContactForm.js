@@ -15,15 +15,14 @@ const ContactForm = () => {
     setData(data);
   };
 
-  const handleChange = (e) => {
-    e.persist();
-    //using the spread operator below to make sure that each field is updated individually. The ternary is necessary for the checkbox.
-    const newFormData = {
-      ...data,
-      [e.target.name]: e.target.value,
-    };
-    setData(newFormData);
-  };
+  // const handleChange = (e) => {
+  //   e.persist();
+  //   const newFormData = {
+  //     ...data,
+  //     [e.target.name]: e.target.value,
+  //   };
+  //   setData(newFormData);
+  // };
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -34,13 +33,15 @@ const ContactForm = () => {
               data-testid="first"
               name="firstName"
               placeholder="Edd"
-              value={data.firstName}
-              onChange={handleChange}
+              // value={data.firstName}
+              // onChange={handleChange}
               ref={register({ required: true, maxLength: 3 })}
             />
           </label>
           {errors.firstName && (
-            <p>Looks like there was an error: {errors.firstName.type}</p>
+            <p data-testid="error">
+              Looks like there was an error: {errors.firstName.type}
+            </p>
           )}
         </div>
 
@@ -51,8 +52,8 @@ const ContactForm = () => {
               id="lastName"
               name="lastName"
               placeholder="Burke"
-              value={data.lastName}
-              onChange={handleChange}
+              // value={data.lastName}
+              // onChange={handleChange}
               ref={register({ required: true })}
             />
           </label>
@@ -67,8 +68,8 @@ const ContactForm = () => {
             <input
               id="email"
               name="email"
-              value={data.email}
-              onChange={handleChange}
+              // value={data.email}
+              // onChange={handleChange}
               ref={register({ required: true })}
             />
           </label>
@@ -81,17 +82,22 @@ const ContactForm = () => {
           <textarea
             id="message"
             name="message"
-            value={data.message}
-            onChange={handleChange}
+            // value={data.message}
+            // onChange={handleChange}
             ref={register({ required: false })}
           />
         </div>
 
-        {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
-            {JSON.stringify(data, null, 2)}
-          </pre>
-        )}
+        <div>
+          {data && (
+            <pre
+              data-testid="data"
+              style={{ textAlign: "left", color: "white" }}
+            >
+              {JSON.stringify(data, null, 2)}
+            </pre>
+          )}
+        </div>
 
         <button>Submit</button>
       </form>

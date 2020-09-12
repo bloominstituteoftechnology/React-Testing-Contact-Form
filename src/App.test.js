@@ -11,8 +11,8 @@ import ContactForm from "./components/ContactForm";
 
 test("renders App without crashing", () => {
   render(<App />);
-  const container = render(<App />);
-  console.log(container);
+  // const container = render(<App />);
+  // console.log(container);
 });
 
 test("renders ContactForm", () => {
@@ -20,7 +20,7 @@ test("renders ContactForm", () => {
 });
 
 it("contains first name, last name, email and message forms", () => {
-  const { getByText } = render(<App />);
+  const { getByText } = render(<ContactForm />);
   // console.log(getByText);
 
   getByText(/First Name*/i);
@@ -31,7 +31,7 @@ it("contains first name, last name, email and message forms", () => {
 
 test("has a submit button", () => {
   // Arrange
-  render(<App />);
+  render(<ContactForm />);
 
   // Act
   const submitButton = screen.getByRole("button", { name: /submit/i });
@@ -45,7 +45,6 @@ test("Input fields should accept input", () => {
   const firstName = screen.getByText("First Name*").querySelector("input");
   const lastName = screen.getByText(/last name/i).querySelector("input");
   const email = screen.getByText("Email*").querySelector("input");
-  const message = screen.getByText("Message").querySelector("textarea");
 
   const submit = screen.getByText(/submit/i);
 
@@ -61,10 +60,11 @@ test("Input fields should accept input", () => {
   // expect(message.value).toBe("random text");
 });
 
+// Can't figure out how to get this working
 // test("form shows error when first name is more than 3 characters", () => {
 //   const { getByTestId, getByText } = render(<ContactForm />);
 
-//   const firstNameInput = getByTestId("first");
+//   const firstNameInput = screen.getByText("First Name*").querySelector("input");
 //   const submitButton = getByText(/submit/i);
 
 //   fireEvent.change(firstNameInput, { target: { value: "Tony" } });
@@ -72,5 +72,5 @@ test("Input fields should accept input", () => {
 //   expect(firstNameInput.value).toBe("Tony");
 //   fireEvent.click(submitButton);
 
-//   expect(screen.queryByText(/maxLength/i)).toBeInTheDocument();
+//   expect(screen.getByTestId("error")).toBeInTheDocument();
 // });
