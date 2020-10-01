@@ -7,6 +7,7 @@
 ## Objectives
 
 - explain what automated testing is and its importance
+  From wiki: In software testing, test automation is the use of software separate from the software being tested to control the execution of tests and the comparison of actual outcomes with predicted outcomes.
 - use react-testing-library for testing react components
 - use react-testing-library to test user interactions with fireEvent
 
@@ -28,6 +29,7 @@ As a developer, you will be writing tests for every component. As we've learned,
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
 **Test Runner**
+
 - [ ] In a new terminal window, run `npm test`
 - [ ] With each saved change in your editor, the test runner will re-run all the tests
 - [ ] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
