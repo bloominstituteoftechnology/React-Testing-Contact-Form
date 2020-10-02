@@ -64,4 +64,23 @@ describe("test contact form", ()=>{
 
         await screen.findByText(/error/i)
     })
+
+    test("name inputs only take letters", async ()=>{
+        render (<ContactForm/>)
+        const firstNameInput = screen.getByLabelText(/first name/i)
+        const lastNameInput = screen.getByLabelText(/last name/i)
+        const emailInput = screen.getByLabelText(/email/i)
+        const messageInput = screen.getByLabelText(/message/i)
+    
+        const submitButton = screen.getByRole(/button/i)
+
+        fireEvent.change(firstNameInput, {target: {value: "222"}})
+        fireEvent.change(lastNameInput, {target: { value: "222"}})
+        fireEvent.change(emailInput, {target: { value: "tom@tom.tom"}})
+        fireEvent.change(messageInput, {target: { value: "t"}})
+
+        fireEvent.click(submitButton)
+
+        await screen.findAllByText(/error/i)
+    })
 })

@@ -19,7 +19,13 @@ const ContactForm = () => {
             id="firstName"
             name="firstName"
             placeholder="Edd"
-            ref={register({ required: true, minLength: 2 })}
+            ref={register({ 
+              required: true, 
+              minLength: 2,
+              pattern: {
+                value: /^[A-Z]/i
+              } 
+            })}
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
@@ -32,7 +38,13 @@ const ContactForm = () => {
             id="lastName"
             name="lastName"
             placeholder="Burke"
-            ref={register({ required: true, minLength: 2 })}
+            ref={register({ 
+              required: true, 
+              minLength: 2,
+              pattern: {
+                value: /^[A-Z]/i
+              } 
+            })}
           />
           {errors.lastName && (
             <p>Looks like there was an error: {errors.lastName.type}</p>
