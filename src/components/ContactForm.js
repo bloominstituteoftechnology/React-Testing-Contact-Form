@@ -9,7 +9,7 @@ const ContactForm = () => {
   const onSubmit = (data) => {
     setData(data);
   };
-
+  
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
