@@ -12,11 +12,11 @@ const ContactForm = () => {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} id='form'>
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
-            name="firstName"
+            id="firstName"
             placeholder="Edd"
             ref={register({ required: true, maxLength: 3 })}
           />
