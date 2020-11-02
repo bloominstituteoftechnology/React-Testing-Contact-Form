@@ -33,6 +33,8 @@
     ]
   },
   "devDependencies": {
-    "mutationobserver-shim": "^0.3.3"
+    "@testing-library/react-hooks": "^3.4.2",
+    "mutationobserver-shim": "^0.3.3",
+    "react-test-renderer": "^16.14.0"
   }
 }
