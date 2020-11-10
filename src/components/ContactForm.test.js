@@ -1,5 +1,5 @@
 import React from "react"
-import {fireEvent, getByDisplayValue, getByText, render, screen} from "@testing-library/react";
+import {fireEvent, getByDisplayValue, getByTestId, getByText, render, screen} from "@testing-library/react";
 import ContactForm from './ContactForm'
 
 test('renders contactForm', ()=>{
@@ -7,10 +7,10 @@ test('renders contactForm', ()=>{
 })
 
 test('user can fill out and submit form', () =>{
-  render(<ContactForm/>)
+  const {getByTestId}= render(<ContactForm/>)
+  const expectedFirstName = "aaron";
+  const firstNameInput = getByTestId("firstname")
 
-const firstNameInput = screen.getByText(/First Name/i)
-
-fireEvent.change(getByDisplayValue(/firstname/i),{target:{name}})
-
+  fireEvent.change(firstNameInput, {target:{value:'aaron'}})
+  expect(firstNameInput.value).toBe(expectedFirstName)
 })
