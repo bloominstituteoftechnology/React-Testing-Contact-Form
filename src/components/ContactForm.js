@@ -12,13 +12,13 @@ const ContactForm = () => {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} data-testid='contact-form'>
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
-            placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+            placeholder="Robel"
+            ref={register({ required: true, maxLength: 18 })}
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
@@ -29,7 +29,7 @@ const ContactForm = () => {
           <label htmlFor="lastName">Last Name*</label>
           <input
             name="lastName"
-            placeholder="Burke"
+            placeholder="Mengistu"
             ref={register({ required: true })}
           />
           {errors.lastName && (
@@ -38,12 +38,12 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
+          <label htmlFor="email" >
             Email*
           </label>
-          <input name="email" ref={register({ required: true })} />
+          <input name="email" placeholder="bluebill1049@hotmail.com" ref={register({ required: true })} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
           {errors.email && (
-            <p>Looks like there was an error: {errors.email.type}</p>
+            <p>Looks like there was an error: {errors.email?.type === 'required' && 'required'}{errors.email?.type === 'pattern' && 'invalid email format'}</p>
           )}
         </div>
         <div>
