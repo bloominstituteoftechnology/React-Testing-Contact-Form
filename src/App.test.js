@@ -35,11 +35,11 @@ test('validation of First Name input field', async () => {
 
 test('validation of Last Name input field', async () => {
   const { getByPlaceholderText, queryByText } = render(<ContactForm />)
-  const lastname = getByPlaceholderText('Robel')
+  const lastname = getByPlaceholderText('BlaRobel')
 
 
   fireEvent.change(lastname, { target: { value: 'Mengistu' } })
-  expect(lastname).toHaveValue('Robel')
+  expect(lastname).toHaveValue('BlaRobel')
   fireEvent.blur(lastname)
 
   await waitFor(() => {
