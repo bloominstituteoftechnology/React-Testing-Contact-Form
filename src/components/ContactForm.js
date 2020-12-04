@@ -56,6 +56,7 @@ const ContactForm = () => {
           <textarea
             name="message"
             id="message" 
+            data-testid='message'
             ref={register({ required: false })} 
           />
         </div>
