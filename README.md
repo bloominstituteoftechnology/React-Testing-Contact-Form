@@ -18,19 +18,19 @@ As a developer, you will be writing tests for every component. As we've learned,
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Clone your OWN version of the repository in your terminal.
-- [ ] CD into the project base directory.
-- [ ] Download project dependencies by running `npm install`.
-- [ ] Start up the app using `npm start`.
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Clone your OWN version of the repository in your terminal.
+- [x] CD into the project base directory.
+- [x] Download project dependencies by running `npm install`.
+- [x] Start up the app using `npm start`.
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 **Test Runner**
-- [ ] In a new terminal window, run `npm test`
-- [ ] With each saved change in your editor, the test runner will re-run all the tests
-- [ ] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
+- [x] In a new terminal window, run `npm test`
+- [x] With each saved change in your editor, the test runner will re-run all the tests
+- [x] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
 
 ## Instructions and/or completion requirements (MVP)
 
