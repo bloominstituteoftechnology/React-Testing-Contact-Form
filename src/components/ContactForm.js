@@ -44,7 +44,9 @@ const ContactForm = () => {
 					<label htmlFor="message">Message</label>
 					<textarea name="message" id="message" ref={register({ required: false })} />
 				</div>
-				{data && <pre style={{ textAlign: 'left', color: 'white' }}>{JSON.stringify(data, null, 2)}</pre>}
+				<div data-testid="output">
+					{data && <pre style={{ textAlign: 'left', color: 'white' }}>{JSON.stringify(data, null, 2)}</pre>}
+				</div>
 				<input data-testid="submit" type="submit" />
 			</form>
 		</div>
