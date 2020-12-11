@@ -19,7 +19,6 @@ As a developer, you will be writing tests for every component. As we've learned,
 ## Project Set Up
 
 - [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
 - [ ] Clone your OWN version of the repository in your terminal.
 - [ ] CD into the project base directory.
 - [ ] Download project dependencies by running `npm install`.
@@ -44,6 +43,7 @@ In order to complete your mission for today, you will need to write tests to hel
 
 _If you come across any "unexpected" behaviors in the form UI (not the test), try this flow:_
 
+- [ ] You may have noticed that the form validation for one of the inputs is a little off...
 - [ ] Write a test for the "expected" behavior (it will fail because something in the component is doing something unexpected)
 - [ ] Confirm that the test fails, because of the "unexpected" behavior
 - [ ] Look at the code in the project to find what is causing the behavior
@@ -59,3 +59,9 @@ _If you come across any "unexpected" behaviors in the form UI (not the test), tr
 
 - Add more elements to the form - eg dropdown, checkbox, etc
   - Add tests to include the new form elements
+
+## Submission Format
+
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into `main` (student's Repository). **Please don't merge your own pull request**
+- [ ] From the home page of your repo, make sure you have your branch selected
+- [ ] Copy the URL and paste it into Canvas to submit your project
