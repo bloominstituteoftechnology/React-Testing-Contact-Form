@@ -24,7 +24,9 @@ test('ContactForm add data to the dom', () => {
 	userEvent.type(lastNameInput, 'Ramos');
 	userEvent.type(emailInput, 'something@email.com');
 	userEvent.type(messageTextArea, 'Something === something');
-	act(() => userEvent.click(submitInput));
+	act(() => {
+		submitInput;
+	});
 
 	//Assert
 	const data = screen.getByTestId(/output/i);
