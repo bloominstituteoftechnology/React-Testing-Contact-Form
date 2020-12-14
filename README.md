@@ -20,6 +20,10 @@ As a developer, you will be writing tests for every component. As we've learned,
 ## Project Set Up
 
 - [x ] Create a forked copy of this project.
+<<<<<<< HEAD
+=======
+- [xx ] Add your team lead as collaborator on Github.
+>>>>>>> ec6f6a87f3260bfb4d5af87aab30db621f8bcb79
 - [x ] Clone your OWN version of the repository in your terminal.
 - [x ] CD into the project base directory.
 - [x ] Download project dependencies by running `npm install`.
