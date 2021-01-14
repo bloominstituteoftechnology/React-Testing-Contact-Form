@@ -22,12 +22,11 @@ describe("Can use form", () => {
     fireEvent.keyPress(first, {key: "a", keyCode: "KeyA"});
     fireEvent.click(screen.getByPlaceholderText("bluebill1049@hotmail.com"));
 
-    screen.getByText('Looks like there was an error: minLength')
 
     fireEvent.click(first);
     fireEvent.change(first, {target: {value: "mie"}});
     fireEvent.click(screen.getByPlaceholderText("bluebill1049@hotmail.com"))
 
-    expect(screen.findByText('Looks like there was an error')).toBe("null")
-  })
+    expect(screen.queryByText(/looks like/i)).toBe(null);
+  });
 });
