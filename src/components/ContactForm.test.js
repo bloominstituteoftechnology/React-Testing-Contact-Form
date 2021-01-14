@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import ContactForm from './ContactForm';
 
-test('Form renders without errors', ()=>{
+test('Form renders without errors', async () =>{
     //Arrange
     render(<ContactForm />);
 
@@ -15,14 +15,28 @@ test('Form renders without errors', ()=>{
     const emailInput = screen.getByLabelText(/email/i);
     const messageInput = screen.getByLabelText(/Message/i);
     
-    //2.Type values into inputs
-    userEvent.type(firstNameInput,'Diego');
-    userEvent.type(lastNameInput,'Roman');
-    userEvent.type(emailInput,'Diego@gmail.com');
-    userEvent.type(messageInput,'Test message to see if this works');
 
-    //3. click submit button
-    // const button = screen.getByRole('button');
-    // userEvent.click(button);
+        //2.Type values into inputs
+        userEvent.type(firstNameInput,'Di');
+        userEvent.type(lastNameInput,'Roman');
+        userEvent.type(emailInput,'Diego@gmail.com');
+        userEvent.type(messageInput,'Test message to see if this works');
 
-})
+        //3. click submit button
+        const button = screen.getByRole('button');
+        userEvent.click(button);
+    
+    //Assert:
+    //inputs recieved
+    const newFirstName = await screen.findByText(/Di/i);
+    const newLastName = await screen.findByText(/Roman/i);
+    const newEmail = await screen.findByText(/Diego@gmail.com/i);
+    const newMessage = await screen.findByText(/Test message to see if this works/i);
+
+    expect(newFirstName).toBeInTheDocument(/Di/i); 
+    expect(newLastName).toBeInTheDocument(/Roman/i); 
+    expect(newEmail).toBeInTheDocument(/Diego@gmail.com/i); 
+    expect(newMessage).toBeInTheDocument(/Test message to see if this works/i); 
+
+
+});
