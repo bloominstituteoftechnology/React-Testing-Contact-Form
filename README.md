@@ -9,6 +9,7 @@
 - explain what automated testing is and its importance
 - use react-testing-library for testing react components
 - use react-testing-library to test user interactions with fireEvent
+//
 
 ## Introduction
 
