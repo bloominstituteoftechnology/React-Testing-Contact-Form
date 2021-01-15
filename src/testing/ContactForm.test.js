@@ -7,7 +7,7 @@ import ContactForm from '../Components/ContactForm';
 test("renders without errors", async () => {
     render(<ContactForm/>);
   
-    // get our input fields
+    // get input fields
     const firstNameInput = screen.getByLabelText(/first name/i);
     const lastNameInput = screen.getByLabelText(/last name/i);
     const emailInput = screen.getByLabelText(/email/i);
