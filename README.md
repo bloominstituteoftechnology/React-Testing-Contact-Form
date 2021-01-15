@@ -28,6 +28,7 @@ As a developer, you will be writing tests for every component. As we've learned,
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
 **Test Runner**
+
 - [ ] In a new terminal window, run `npm test`
 - [ ] With each saved change in your editor, the test runner will re-run all the tests
 - [ ] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
@@ -49,16 +50,6 @@ _If you come across any "unexpected" behaviors in the form UI (not the test), tr
 - [ ] Look at the code in the project to find what is causing the behavior
 - [ ] Fix the code so that your new test passes
 - [ ] Celebrate that your test helped you find and fix a bug!
-
-## Stretch goals
-
-- Using the [REQ|RES API](https://reqres.in/), build out a POST request in the form.
-
-  - Using the [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro), study how to test async calls
-  - Write a new test to cover your new async call
-
-- Add more elements to the form - eg dropdown, checkbox, etc
-  - Add tests to include the new form elements
 
 ## Submission Format
 
