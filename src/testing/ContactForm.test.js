@@ -16,7 +16,7 @@ test("renders without errors", async () => {
     //type in input fields
     userEvent.type(firstNameInput, 'Andrew');
     userEvent.type(lastNameInput, 'Sohrabi');
-    userEvent.type(emailInput, 'andrew.sohrabi@gmail.com');
+    userEvent.type(emailInput, 'andrew@gmail.com');
     userEvent.type(messageInput, 'test test test');
   
     //submit
