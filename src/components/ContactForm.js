@@ -13,7 +13,7 @@ const ContactForm = () => {
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+        <div data-testid="firstName">
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
@@ -25,7 +25,7 @@ const ContactForm = () => {
           )}
         </div>
 
-        <div>
+        <div data-testid="lastName">
           <label htmlFor="lastName">Last Name*</label>
           <input
             name="lastName"
@@ -37,7 +37,7 @@ const ContactForm = () => {
           )}
         </div>
 
-        <div>
+        <div data-testid="email">
           <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
             Email*
           </label>
@@ -55,7 +55,7 @@ const ContactForm = () => {
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        <input data-testid="submit" type="submit" />
       </form>
     </div>
   );
