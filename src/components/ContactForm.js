@@ -39,13 +39,12 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email">
-            Email*
-          </label>
-          <input name="email" 
+          <label htmlFor="email">Email*</label>
+          <input
+            name="email"
             id="lastName"
             placeholder="bluebill1049@hotmail.com"
-            ref={register({ required: true })} 
+            ref={register({ required: true })}
           />
           {errors.email && (
             <p>Looks like there was an error: {errors.email.type}</p>
@@ -55,8 +54,8 @@ const ContactForm = () => {
           <label htmlFor="message">Message</label>
           <textarea
             name="message"
-            id="message" 
-            ref={register({ required: false })} 
+            id="message"
+            ref={register({ required: false })}
           />
         </div>
         {data && (
