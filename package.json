@@ -33,6 +33,8 @@
     ]
   },
   "devDependencies": {
-    "mutationobserver-shim": "^0.3.3"
+    "jest-dom": "^4.0.0",
+    "mutationobserver-shim": "^0.3.3",
+    "react-testing-library": "^8.0.1"
   }
 }
