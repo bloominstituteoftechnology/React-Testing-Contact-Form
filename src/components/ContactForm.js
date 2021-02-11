@@ -8,6 +8,7 @@ const ContactForm = () => {
   });
   const onSubmit = (data) => {
     setData(data);
+    console.log(data)
   };
 
   return (
@@ -60,11 +61,13 @@ const ContactForm = () => {
           />
         </div>
         {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
+          <pre 
+          aria-label="data-display"
+          style={{ textAlign: "left", color: "white" }}>
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
-        <input type="submit" />
+        <input type="submit" data-testid="submit" />
       </form>
     </div>
   );
