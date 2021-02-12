@@ -8,7 +8,7 @@ test('renders without errors', () => {
     render(<ContactForm />);
 })
 
-test('form is filled out and submits user information', () => {
+test('form is filled out and submits user information', async () => {
 
     render(<ContactForm />)
 
@@ -22,7 +22,7 @@ test('form is filled out and submits user information', () => {
     userEvent.type(emailInput, 'bluebill1049@hotmail.com');
     userEvent.type(messageInput, 'test');
 
-    act(() => {
+   await act(async () => {
         const button = screen.getByRole('button', {name:/submit/i});
         expect.objectContaining({
             'firstName': 'Edd',
