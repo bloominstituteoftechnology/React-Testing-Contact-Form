@@ -40,3 +40,5 @@ test("Contact Form is rendering w/ button and inputs", async () => {
   //   const newMessageInput = await screen.findByText(/good day to code/i);
   //   expect(newMessageInput).toBeInTheDocument();
 });
+
+//gotta test new inputs later
