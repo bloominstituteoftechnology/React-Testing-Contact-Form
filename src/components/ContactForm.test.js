@@ -11,4 +11,11 @@ test("testing form", () => {
     const lastName=screen.getByLabelText((/last name/i));
     const email = screen.getByLabelText(/email/i);
     const message = screen.getByLabelText(/message/i);
+
+    userEvent.type(firstName, "Harry")
+    userEvent.type(lastName, "Mardirossian")
+    userEvent.type(email, "h@m.com")
+    userEvent.type(message, "sup")
+
+    
 })
