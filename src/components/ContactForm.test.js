@@ -2,6 +2,7 @@ import React from "React";
 import { render, screen } from "@testing-library/react";
 import ContactForm from './ContactForm'
 import userEvent from "@testing-library/user-event";
+import { act } from 'react-dom/test-utils';
 
 test("Component Renders", () => {
     
@@ -9,7 +10,7 @@ test("Component Renders", () => {
   
 });
 
-test("input fields behave normally", () => {
+test("input fields behave normally", async () => {
     // render
     render(<ContactForm />);
     // query for all inputs
@@ -43,13 +44,9 @@ test("input fields behave normally", () => {
 
 
   
-    // query for the text "tiger"
-    //const emailText = screen.queryByText(/karate@jackblack.com/i);
-  
-    // assert
-    //expect(emailText).toBeInTheDocument();
   });
 
+  // previous attempt, did not work
 // test("renders without errors", async () => {
 //     render(<ContactForm/>);
   
