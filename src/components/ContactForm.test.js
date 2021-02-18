@@ -39,8 +39,6 @@ test('renders ContactForm without errors', () => {
   // const messageTextArea = screen.getByTestId(/message/i);
   // console.log("message:", message)
 
-
-
   // expect(element).toBeInTheDocument(); // jest-dom matcher
   // expect(element).toBeTruthy(); // jest matcher
   // expect(element).toBeInTheDocument(); // jest-dom matcher
@@ -60,6 +58,7 @@ test('when a user fills out and submits the form, a new user is created and disp
   const emailInput = screen.getByLabelText(/email/i);
   const messageInput = screen.getByLabelText(/message/i);
   const submitButton = screen.getByTestId(/submit-button/i);
+  const isOverEighteenCheckbox = screen.getByTestId(/is-over-eighteen/i);
 
   // Act - type into form, filling out all form fields, and submit
   act(() => {
@@ -68,6 +67,7 @@ test('when a user fills out and submits the form, a new user is created and disp
     userEvent.type(lastNameInput, "Stanford");
     userEvent.type(emailInput, "1234@mail.com");
     userEvent.type(messageInput, "Aloha");
+    userEvent.click(isOverEighteenCheckbox);
     userEvent.click(submitButton);
   });
 
