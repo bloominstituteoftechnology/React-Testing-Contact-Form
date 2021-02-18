@@ -6,9 +6,12 @@
 
 ## Objectives
 
-- explain what automated testing is and its importance
-- use react-testing-library for testing react components
-- use react-testing-library to test user interactions with fireEvent
+[x] explain what automated testing is and its importance
+  Automated tests are tests that run automatically to test end to end, integration, or units of code.  They enforce high code quality, help with the maintaining of code into the future (in the event of deprecation, etc.), and help prevent bugs.
+
+[x] use react-testing-library for testing react components
+
+[x] use react-testing-library to test user interactions with fireEvent
 
 ## Introduction
 
@@ -18,19 +21,19 @@ As a developer, you will be writing tests for every component. As we've learned,
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Clone your OWN version of the repository in your terminal.
-- [ ] CD into the project base directory.
-- [ ] Download project dependencies by running `npm install`.
-- [ ] Start up the app using `npm start`.
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Clone your OWN version of the repository in your terminal.
+- [x] CD into the project base directory.
+- [x] Download project dependencies by running `npm install`.
+- [x] Start up the app using `npm start`.
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 **Test Runner**
-- [ ] In a new terminal window, run `npm test`
-- [ ] With each saved change in your editor, the test runner will re-run all the tests
-- [ ] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
+- [x] In a new terminal window, run `npm test`
+- [x] With each saved change in your editor, the test runner will re-run all the tests
+- [x] **IMPORTANT** If a test fails, use the test runner's error messages to find out why it is failing
 
 ## Instructions and/or completion requirements (MVP)
 
@@ -43,25 +46,25 @@ In order to complete your mission for today, you will need to write tests to hel
 
 _If you come across any "unexpected" behaviors in the form UI (not the test), try this flow:_
 
-- [ ] You may have noticed that the form validation for one of the inputs is a little off...
-- [ ] Write a test for the "expected" behavior (it will fail because something in the component is doing something unexpected)
-- [ ] Confirm that the test fails, because of the "unexpected" behavior
-- [ ] Look at the code in the project to find what is causing the behavior
-- [ ] Fix the code so that your new test passes
-- [ ] Celebrate that your test helped you find and fix a bug!
+- [x] You may have noticed that the form validation for one of the inputs is a little off...
+- [x] Write a test for the "expected" behavior (it will fail because something in the component is doing something unexpected)
+- [x] Confirm that the test fails, because of the "unexpected" behavior
+- [x] Look at the code in the project to find what is causing the behavior
+- [x] Fix the code so that your new test passes
+- [x] Celebrate that your test helped you find and fix a bug!
 
 ## Stretch goals
 
-- Using the [REQ|RES API](https://reqres.in/), build out a POST request in the form.
+  [x] Using the [REQ|RES API](https://reqres.in/), build out a POST request in the form.
 
-  - Using the [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro), study how to test async calls
-  - Write a new test to cover your new async call
+  [x] Using the [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro), study how to test async calls
+  [x] Write a new test to cover your new async call
 
-- Add more elements to the form - eg dropdown, checkbox, etc
-  - Add tests to include the new form elements
+  [x] Add more elements to the form - eg dropdown, checkbox, etc
+  [x] Add tests to include the new form elements
 
 ## Submission Format
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into `main` (student's Repository). **Please don't merge your own pull request**
-- [ ] From the home page of your repo, make sure you have your branch selected
-- [ ] Copy the URL and paste it into Canvas to submit your project
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into `main` (student's Repository). **Please don't merge your own pull request**
+- [x] From the home page of your repo, make sure you have your branch selected
+- [x] Copy the URL and paste it into Canvas to submit your project
