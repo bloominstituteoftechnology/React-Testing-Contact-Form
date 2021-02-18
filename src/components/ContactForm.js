@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
+const FormReset = () => {
+  Array.from(document.querySelectorAll("input")).forEach(
+    input => (input.value = ""))
+}
+
+const LabelReset = () => {
+  Array.from(document.querySelectorAll("textarea")).forEach(
+    label => (label.value = ""))
+}
+
+
+
 const ContactForm = () => {
   const [data, setData] = useState();
   const { register, errors, handleSubmit } = useForm({
@@ -8,6 +20,9 @@ const ContactForm = () => {
   });
   const onSubmit = (data) => {
     setData(data);
+    FormReset();
+    LabelReset();
+    
   };
 
   return (
@@ -16,12 +31,17 @@ const ContactForm = () => {
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
+            id='firstName'
             name="firstName"
-            placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+            placeholder="enter first name"
+            ref={register({ 
+              required: true, 
+              maxLength: 10, 
+            })}
+            
           />
           {errors.firstName && (
-            <p>Looks like there was an error: {errors.firstName.type}</p>
+            <p>Looks like there was an error: {errors.firstName.message}</p>
           )}
         </div>
 
@@ -30,8 +50,11 @@ const ContactForm = () => {
           <input
             id="lastName"
             name="lastName"
-            placeholder="Burke"
-            ref={register({ required: true })}
+            placeholder="enter last name"
+            ref={register({ 
+              required: true, 
+              minLength: 2 
+            })}
           />
           {errors.lastName && (
             <p>Looks like there was an error: {errors.lastName.type}</p>
@@ -43,20 +66,28 @@ const ContactForm = () => {
             Email*
           </label>
           <input name="email" 
-            id="lastName"
-            placeholder="bluebill1049@hotmail.com"
-            ref={register({ required: true })} 
+            id="email"
+            placeholder="enter email address"
+            ref={register({ 
+              required: true, 
+              pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: 'invalid email address'
+            }
+          })} 
           />
           {errors.email && (
-            <p>Looks like there was an error: {errors.email.type}</p>
+            <p>Looks like there was an error: {errors.email.message}</p>
           )}
         </div>
+
         <div>
           <label htmlFor="message">Message</label>
           <textarea
             name="message"
             id="message" 
-            ref={register({ required: false })} 
+            ref={register({ 
+              required: false 
+            })} 
           />
         </div>
         {data && (
