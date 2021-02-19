@@ -23,6 +23,7 @@ test('When a user fills out the form, their information is properly displayed on
     const submitButton = screen.getByRole("button", {name: /submit/i });
 
     //rendered after submission
+
     const newFirstName = screen.findByText(/shane/i);
     const newLastName = screen.findByText(/shenanigans/i);
     const newEmail = screen.findByText(/heyheyhey@email.com/i);
@@ -66,7 +67,6 @@ test('When a user fills out the form, their information is properly displayed on
     })
 
 
-
-
-
 })
+
+
