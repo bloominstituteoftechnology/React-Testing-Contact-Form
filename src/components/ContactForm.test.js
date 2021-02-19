@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import  '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event';
 // import { act } from 'react-dom/test-utils';
 
@@ -26,7 +27,7 @@ test('renders the input labels', () => {
         const lastNameInput = screen.getAllByLabelText(/Last Name*/)
         const emailInput = screen.getAllByLabelText(/Email*/)
         const messageInput = screen.getAllByLabelText(/Message/)
-        const submitButton = screen.getAllByRole('button', {name: /Submit/i })
+        const submitButton = screen.getByRole('button', {name: /Submit/i })
 
         //Act - type into the form, filling out all fields of the form, then submit
         userEvent.type(firstNameInput, 'Tony')
@@ -48,3 +49,4 @@ test('renders the input labels', () => {
 
 
    });
+
