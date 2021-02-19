@@ -16,6 +16,7 @@ const ContactForm = () => {
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
+            id="firstName"
             name="firstName"
             placeholder="Edd"
             ref={register({ required: true, maxLength: 3 })}
@@ -42,8 +43,9 @@ const ContactForm = () => {
           <label htmlFor="email">
             Email*
           </label>
-          <input name="email" 
-            id="lastName"
+          <input 
+            id="email"
+            name="email" 
             placeholder="bluebill1049@hotmail.com"
             ref={register({ required: true })} 
           />
