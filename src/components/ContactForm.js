@@ -103,6 +103,7 @@ const ContactForm = () => {
             id="email"
             name="email" 
             value={form.email}
+            type='email'
             placeholder="bluebill1049@hotmail.com"
           />
           {(errors.email) && <p data-testid="error">Error: {errors.email}</p>}
